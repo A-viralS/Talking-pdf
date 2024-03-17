@@ -1,10 +1,10 @@
 'use client'
-import { uploadToS3 } from '@/lib/db/s3';
+import axios from "axios";
+import { uploadToS3 } from '@/lib/s3';
 import { Inbox, Loader2 } from "lucide-react";
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
@@ -12,18 +12,22 @@ const FileUpload = () => {
     const router = useRouter();
     const [uploading, setUploading] = useState(false);
 
-    const { mutate } = useMutation({
+    const { mutate, } = useMutation({
+
         mutationFn: async ({
+
             file_key,
             file_name,
         }: {
             file_key: string;
             file_name: string;
         }) => {
+            console.log('above the route call ')
             const response = await axios.post("/api/create-chat", {
                 file_key,
                 file_name,
             });
+            console.log('after  the route call ')
             return response.data;
         },
         onSuccess: (data) => {

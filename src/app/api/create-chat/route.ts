@@ -1,12 +1,17 @@
+import { loadS3IntoPinecone } from '@/lib/pinecone';
 import {NextResponse} from 'next/server'
 import React from 'react'
 
 export async function POST(req:Request, res: Response){
+    console.log('inside the create chat route');
     try {
+        console.log('inside the create chat route');
         const body=await req.json()
         const {file_key,file_name}= body;
         console.log(file_key,file_name);
-        return NextResponse.json({message:"file uploaded successfully"})
+console.log('above the loads3 function ');
+       const pages= await loadS3IntoPinecone(file_key);
+        return NextResponse.json({pages})
         
     } catch (error) {
         console.error(error)
