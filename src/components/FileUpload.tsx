@@ -30,7 +30,7 @@ const FileUpload = () => {
             console.log('after  the route call ')
             return response.data;
         },
-        onSuccess: (data) => {
+        onSuccess: ({ data }) => {
             toast.success("success")
             console.log(data)
         },
@@ -58,7 +58,16 @@ const FileUpload = () => {
                         toast.error("Something went wrong");
                         return;
                     }
-                    mutate(data);
+                    mutate(data, {
+                        onSuccess: ({ chat_id }) => {
+                            toast.success("Chat created!");
+                            router.push(`/chat/${chat_id}`);
+                        },
+                        onError: (err) => {
+                            toast.error("Error creating chat");
+                            console.error(err);
+                        },
+                    });
                 } catch (error) {
                     console.log(error);
                 } finally {
