@@ -48,7 +48,7 @@ export default async function Home() {
           </div>
 
           <p className="max-w-xl mt-1 text-lg text-slate-600 font-extrabold">
-            Revolutionize your reading experience - Engage in conversation with your PDFs!"
+            Revolutionize your reading experience - Engage in conversation with your PDFs!
           </p>
           <div className="w-full mt-4">
             {isAuth ? (
