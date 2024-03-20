@@ -29,7 +29,7 @@ export default async function Home() {
         ex flex-col items-center text-center">
           <div className="flex items-center justify-center">
 
-            <h1 className="mr-3 text-5xl font-semibold">Chat with any PDF</h1>
+            <h1 className="mr-3 text-5xl font-semibold font-mono gradient-text p-2">Talking PDF</h1>
 
 
           </div>
@@ -39,7 +39,7 @@ export default async function Home() {
               <>
                 <Link href={`/chat/${firstChat.id}`}>
                   <Button>
-                    Go to Chats <ArrowRight className="ml-2" />
+                    Go to your Chats <ArrowRight className="ml-2" />
                   </Button>
                 </Link>
 
@@ -47,9 +47,8 @@ export default async function Home() {
             )}
           </div>
 
-          <p className="max-w-xl mt-1 text-lg text-slate-600">
-            Join millions of students, researchers and professionals to instantly
-            answer questions and understand research with AI
+          <p className="max-w-xl mt-1 text-lg text-slate-600 font-extrabold">
+            Revolutionize your reading experience - Engage in conversation with your PDFs!"
           </p>
           <div className="w-full mt-4">
             {isAuth ? (

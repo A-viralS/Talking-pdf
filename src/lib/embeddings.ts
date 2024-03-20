@@ -18,7 +18,9 @@ export async function getEmbeddings(text: string) {
 
     if (result.error) {
       console.error('OpenAI API Error:', result.error);
+      
       throw new Error('OpenAI API Error');
+      
     }
 
     return result.data[0].embedding as number[];
