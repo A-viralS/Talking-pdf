@@ -38,7 +38,7 @@ export default async function Home() {
             <FileUpload />
           ) : (
             <Link href="/sign-in">
-              <Button className="ml-[105px]">
+              <Button className="ml-[105px] lg:[1000px]">
                 Login to get Started!
                 <LogIn className="w-4 h-4 ml-2" />
               </Button>
@@ -47,7 +47,7 @@ export default async function Home() {
         </div>
 
         {isAuth && firstChat && (
-          <div className="mt-4 w-full ml-[1200px]">
+          <div className="mt-4 w-full ml-[170px]">
             <Link href={`/chat/${firstChat.id}`}>
               <Button>
                 Go to your Chats <ArrowRight className="ml-2" />
