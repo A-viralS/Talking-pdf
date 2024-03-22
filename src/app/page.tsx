@@ -67,7 +67,21 @@ export default async function Home() {
           </div>
 
 
+
         </div>
+
+      </div>
+      <div className="absolute bottom-4 p-2 m-2 font-mono mt-2 ">
+        <p className="font-bold">  NOTE</p>
+        <div className="">
+          <span className="gradient-text-dis"> This website is currently operating on the free tiers of OPEN AI Embeddings and Vercel. If you face any issues with file uploads, it may be due to limits on upload request size or increased traffic on these free tiers. Try smaller PDFs. I will soon be upgrading to paid versions!
+          </span>
+          <span className="text-2xl font-bold " > 😊</span>
+
+        </div>
+
+
+
       </div>
     </div>
 

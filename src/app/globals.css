@@ -101,3 +101,12 @@
   -webkit-text-fill-color: transparent;
   color: transparent; /* Ensures text is transparent on browsers that do not support background-clip */
 }
+.gradient-text-dis {
+  background: linear-gradient(45deg, #cd5e0e, #c21313, #0787e2, #b54c00);
+  background-size: 400% 400%;
+  animation: moveGradient 8s infinite;
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Ensures text is transparent on browsers that do not support background-clip */
+}
