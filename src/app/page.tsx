@@ -33,6 +33,21 @@ export default async function Home() {
 
 
           </div>
+          <div className="w-full mt-4">
+            {isAuth ? (
+
+              <FileUpload />
+            ) : (
+              <Link href="/sign-in">
+
+                <Button>
+
+                  Login to get Started!
+                  <LogIn className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            )}
+          </div>
           <div className="flex mt-2 items-center justify-center">
 
             {isAuth && firstChat && (
@@ -50,21 +65,7 @@ export default async function Home() {
           <p className="max-w-xl mt-1 text-lg text-slate-600 font-extrabold">
             Revolutionize your reading experience - Engage in conversation with your PDFs!
           </p>
-          <div className="w-full mt-4">
-            {isAuth ? (
 
-              <FileUpload />
-            ) : (
-              <Link href="/sign-in">
-
-                <Button>
-
-                  Login to get Started!
-                  <LogIn className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-            )}
-          </div>
 
 
 
